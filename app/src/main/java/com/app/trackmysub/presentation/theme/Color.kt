@@ -1,4 +1,4 @@
-package com.app.trackmysub.ui.theme
+package com.app.trackmysub.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,9 +1,9 @@
 package com.app.trackmysub.data.local.converter
 
 import androidx.room.TypeConverter
-import com.app.trackmysub.data.local.entity.Gender
+import com.app.trackmysub.data.local.enums.Gender
 
-class Converters {
+class GenderConverter {
 
     @TypeConverter
     fun fromGender(value: Gender): String = value.name
