@@ -38,3 +38,5 @@ data class SubscriptionEntity (
     val isSynced: Boolean = false
 
 )
+
+class InvalidSubscriptionException(message: String): Exception(message)

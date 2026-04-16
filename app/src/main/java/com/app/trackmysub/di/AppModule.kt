@@ -3,6 +3,11 @@ package com.app.trackmysub.di
 import android.content.Context
 import androidx.room.Room
 import com.app.trackmysub.data.local.AppDatabase
+import com.app.trackmysub.domain.repository.SubscriptionRepository
+import com.app.trackmysub.domain.usecase.subscription.AddSubscription
+import com.app.trackmysub.domain.usecase.subscription.DeleteSubscription
+import com.app.trackmysub.domain.usecase.subscription.GetSubscriptions
+import com.app.trackmysub.domain.usecase.subscription.SubscriptionUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,5 +36,15 @@ object AppModule {
     @Provides
     @Singleton
     fun provideUserDao(db: AppDatabase) = db.userDao()
+
+    @Provides
+    @Singleton
+    fun provideSubscriptionUseCases(repository: SubscriptionRepository): SubscriptionUseCases {
+        return SubscriptionUseCases(
+                deleteSubscription = DeleteSubscription(repository),
+                getSubscriptions = GetSubscriptions(repository),
+                addSubscription = AddSubscription(repository)
+        )
+    }
 
 }
