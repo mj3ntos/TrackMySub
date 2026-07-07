@@ -2,7 +2,7 @@ package com.app.trackmysub.domain.usecase.subscription
 
 import com.app.trackmysub.domain.model.entity.SubscriptionEntity
 import com.app.trackmysub.domain.repository.SubscriptionRepository
-import com.app.trackmysub.presentation.home.SubscriptionFilter
+import com.app.trackmysub.domain.model.SubscriptionFilter
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

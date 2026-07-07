@@ -23,7 +23,7 @@ data class SubscriptionEntity (
     @PrimaryKey
     val subscriptionId: String = UUID.randomUUID().toString(),
     val ownerId: String = "local_user",
-    val subscriptionIcon: String? = null,
+    val subscriptionIcon: Int? = null,
     val name: String,
     val price: Double,
     val currency: String = "$",
